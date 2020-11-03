@@ -146,15 +146,16 @@ https://pypi.org/project/websocket_client/
 **Install latest node.js and NPM (package manager) on the serverpi:**
 
 uname -m ...returns processor type: armv7l  
- copy link for the ARMv7 from https://nodejs.org/en/download/
-download the tar via terminal using wget:  
- wget https://nodejs.org/dist/v12.14.0/node-v12.14.0-linux-armv7l.tar.xz
+download tar for "ARMv7" from https://nodejs.org/en/download/
+
 Extract the archive:  
- tar -xvf node-v12.14.0-linux-armv7l.tar.xz
+tar -xvf node-v12.14.0-linux-armv7l.tar.xz
 cd node-v12.14.0-linux-armv7l/
-sudo cp -R \* /usr/local/
-node -v ...returns v12.14.0 (after restart)
-npm -v ...returns 6.13.4
+sudo cp -R * /usr/local/
+reboot pi
+node -v ...returns v14.15.0
+
+npm -v ...returns 6.14.8
 
 **Install videosocket on the serverpi:**
 
