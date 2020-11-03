@@ -59,7 +59,7 @@ The pi's run on raspbian, flugchischte runs on linux mint.
 @flugchischte:
 
     ssh-keygen -t rsa ...create a RSA type keypair on the flugchischte
-    ssh-copy-id michi@55.55.55.55 ...copies the public key to the serverpi
+    ssh-copy-id pi@55.55.55.55 ...copies the public key to the serverpi
     ssh-copy-id michi@55.55.55.66 ...copies the public key to the robopi
 
 @robopi (to enable connection to serverpi)
