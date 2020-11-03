@@ -154,16 +154,16 @@ cd node-v12.14.0-linux-armv7l/
 sudo cp -R * /usr/local/
 reboot pi
 node -v ...returns v14.15.0
-
 npm -v ...returns 6.14.8
 
 **Install videosocket on the serverpi:**
 
     mkdir /var/www/websocket
     ...create a hardlink, softlink wont work:
-    sudo ln  ~/sshgit/pyrobot/serverpi/var_www_websocket/videosocket_relay.js /var/www/websocket/
+    sudo ln ~/git/rig-monitoring/serverpi/var_www_websocket/videosocket_relay.js /var/www/websocket/
+
     cd /var/www/websocket
-    sudo chown -R michi /var/www/websocket
+    sudo chown -R pi /var/www/websocket
     npm init ...just click through all steps with enter
     npm install --save-dev bufferutil
     npm install --save-dev utf-8-validate
@@ -172,7 +172,7 @@ npm -v ...returns 6.14.8
 **Install gpiosocket on the serverpi:**
 
     ...create a hardlink, softlink wont work:
-    sudo ln  ~/sshgit/pyrobot/serverpi/var_www_websocket/gpio_socket.js /var/www/websocket/
+    sudo ln  ~/git/rig-monitoring/serverpi/var_www_websocket/gpio_socket.js /var/www/websocket/
     ...check if it works:
     cd /var/www/websocket
     node gpio_socket.js
@@ -182,10 +182,10 @@ npm -v ...returns 6.14.8
 
 Create softlinks for apache:
 
-    sudo ln -s ~/sshgit/pyrobot/serverpi/var_www_html/control_screen.html /var/www/html/
-    sudo ln -s ~/sshgit/pyrobot/serverpi/var_www_html/jsmpeg.min.js /var/www/html/
-    sudo ln -s ~/sshgit/pyrobot/serverpi/var_www_html/control_screen.css /var/www/html/
-    sudo ln -s ~/sshgit/pyrobot/serverpi/var_www_html/control_screen.js /var/www/html/
+    sudo ln -s ~/git/rig-monitoring/serverpi/var_www_html/control_screen.html /var/www/html/
+    sudo ln -s ~/git/rig-monitoring/serverpi/var_www_html/jsmpeg.min.js /var/www/html/
+    sudo ln -s ~/git/rig-monitoring/serverpi/var_www_html/control_screen.css /var/www/html/
+    sudo ln -s ~/git/rig-monitoring/serverpi/var_www_html/control_screen.js /var/www/html/
 
     to restart apache:
     sudo /etc/init.d/apache2 restart
@@ -228,8 +228,8 @@ https://serversforhackers.com/c/monitoring-processes-with-supervisord
     sudo apt-get install -y supervisor
     sudo service supervisor start
     create softlinks to supervisorconfig:
-    sudo ln -s ~/sshgit/pyrobot/serverpi/supervisor_videosocket.conf /etc/supervisor/conf.d/
-    sudo ln -s ~/sshgit/pyrobot/serverpi/supervisor_gpiosocket.conf /etc/supervisor/conf.d/
+    sudo ln -s ~/git/rig-monitoring/serverpi/supervisor_videosocket.conf /etc/supervisor/conf.d/
+    sudo ln -s ~/git/rig-monitoring/serverpi/supervisor_gpiosocket.conf /etc/supervisor/conf.d/
     sudo mkdir /var/log/pyrolog
 
     sudo supervisorctl reread ...should not need sudo
