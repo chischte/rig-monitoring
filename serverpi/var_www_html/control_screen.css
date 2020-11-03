@@ -1,0 +1,95 @@
+body {
+  margin: 0px;
+  background-color: #e29243;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+#video-canvas {
+  height: 100vh;
+  width: calc(100vh * 640 / 480);
+  z-index: -2;
+}
+
+#gpiobox {
+  position: absolute;
+  font-size: 20px;
+  padding: 6px;
+  font-weight: bold;
+  left: 50%;
+  top: 10px;
+  margin-left: -50px;
+  width: 100px;
+  background: #111;
+  color: #eee;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.infofieldcontainer {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100vh * 640 / 480);
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  vertical-align: top;
+  top: 10px;
+}
+
+.infofields {
+  background: rgb(146, 143, 143);
+  font-size: 16px;
+  padding: 4px;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #eee;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#lipoinfo {
+  margin-left: 12px;
+}
+
+#roboinfo {
+  margin-right: 12px;
+}
+
+#focusbox {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 300px;
+  padding: 10px;
+  margin-left: -160px;
+  font-size: 20px;
+  color: #eee;
+  background: #111;
+  border: 4px solid #f00;
+  cursor: default;
+  outline: none;
+  z-index: +2;
+}
+
+#focusbox:focus {
+  padding: 8px;
+  border: 2px solid #0f0;
+  background: rgb(21, 170, 16);
+  font-weight: bold;
+  cursor: crosshair;
+  color: #111;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, Chrome, Firefox */
+}
