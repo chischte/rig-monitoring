@@ -24,13 +24,16 @@ The following files have been copied from there:
 - jsmpeg.min.js ...for the serverpi website
 - websocket-relay.js ...renamed to videosocket_relay.js
 
-The System consists of three host computers:
+The System consists of three computers:
 
-- **robopi** - This is the Pi which is mounted on the Test Rig.
-- **serverpi** - This is the Pi which receives the video Stream from the robopi, it also hosts the webpage.
-- **flugchischte** - This is the system users computer, to watch the video remote control the robot.
+- **robopi**  
+This is the Pi which is mounted on the Test Rig. Raspbian OS.
+- **serverpi**  
+This is computer which receives the video Stream from the robopi, it also hosts the webpage.
+LinuxMint OS.
 
-The pi's run on raspbian, flugchischte runs on linux mint.
+- **flugchischte**  
+This is the system users computer, to watch the video remote control the robot.
 
 ---
 
@@ -82,7 +85,7 @@ If the robopi is connected to the internet via the 4G dongle, a connection can b
 Hardlinks do not update to files that have been overwritten (as it happens in this git workflow).
 The following alias updates the hardlinks on the serverpi:
 
-    alias pyroupdatehardlinks="
+    alias roboupdatehardlinks="
     rm /var/www/websocket/gpio_socket.js;
     ln ~/sshgit/pyrobot/serv erpi/var_www_websocket/gpio_socket.js /var/www/websocket/;
     rm /var/www/websocket/videosock et_relay.js;
@@ -140,21 +143,8 @@ https://pypi.org/project/websocket_client/
 **SETTING UP THE SERVER PI**
 
 **Set up an Apache2 webserver**
-
-    sudo apt install apache2
-
-**Install latest node.js and NPM (package manager) on the serverpi:**
-
-uname -m ...returns processor type: armv7l  
-download tar for "ARMv7" from https://nodejs.org/en/download/
-
-Extract the archive:  
-tar -xvf node-v12.14.0-linux-armv7l.tar.xz
-cd node-v12.14.0-linux-armv7l/
-sudo cp -R * /usr/local/
-reboot pi
-node -v ...returns v14.15.0
-npm -v ...returns 6.14.8
+  
+**Install latest node.js and NPM**
 
 **Install videosocket on the serverpi:**
 
@@ -163,11 +153,22 @@ npm -v ...returns 6.14.8
     sudo ln ~/git/rig-monitoring/serverpi/var_www_websocket/videosocket_relay.js /var/www/websocket/
 
     cd /var/www/websocket
-    sudo chown -R pi /var/www/websocket
+    sudo chown -R michi /var/www/websocket
     npm init ...just click through all steps with enter
     npm install --save-dev bufferutil
     npm install --save-dev utf-8-validate
     npm install ws
+
+
+
+*************HEEREEE*******************************************************
+*************HEEREEE*******************************************************
+*************HEEREEE*******************************************************
+*************HEEREEE*******************************************************
+*************HEEREEE*******************************************************
+*************HEEREEE*******************************************************
+
+
 
 **Install gpiosocket on the serverpi:**
 
