@@ -62,21 +62,18 @@ This is the system users computer, to watch the video remote control the robot.
 @flugchischte:
 
     ssh-keygen -t rsa ...create a RSA type keypair on the flugchischte
-    ssh-copy-id pi@55.55.55.55 ...copies the public key to the serverpi
-    ssh-copy-id michi@55.55.55.66 ...copies the public key to the robopi
+    ssh-copy-id michi@10.10.20.145 ...copies the public key to the serverpi
 
-@robopi (to enable connection to serverpi)
+To establish ssh connection:
 
-    ssh-keygen -t rsa
-    ssh-copy-id -p 2022 michi@machinelogger.synology.me
+ssh michi@10.10.20.145
 
-create aliases to connect from flugchiste to robopi or serverpi:
 
-    alias sshrobopi="ssh -p 2023 michi@machinelogger.synology.me"
-    alias sshserverpi="ssh -p 2022 michi@machinelogger.synology.me"
 
-The ssh connection to the robopi does only work, if it is connected to the local network.
-If the robopi is connected to the internet via the 4G dongle, a connection can be established using VNC viewer (remote desktop client).
+
+
+
+
 
 ---
 
