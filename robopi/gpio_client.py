@@ -24,7 +24,7 @@ GPIO.setup(DIR_R2, GPIO.OUT)
 ENA_L_PWM = GPIO.PWM(13, 1000)
 ENA_R_PWM = GPIO.PWM(12, 1000)
 
-ws = websocket.create_connection("ws://machinelogger.synology.me:8083")
+ws = websocket.create_connection("ws://10.10.20.161:8083")
 
 sendPrefix = "ROBOT"
 sendPlaceholder = ""

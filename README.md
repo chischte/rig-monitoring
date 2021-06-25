@@ -203,7 +203,7 @@ cd /var/www/websocket; node videosocket_relay.js supersecret 8081 8082
     	    -framerate 30 -video_size 320x240 -i /dev/video0 \
         -f mpegts \
     	    -codec:v mpeg1video -s 320x240 -b:v 1000k -bf 0 \
-        http://machinelogger.synology.me:8081/supersecret
+        http://10.10.20.161:8081/supersecret
 
 Working settings:
 
@@ -237,9 +237,9 @@ https://serversforhackers.com/c/monitoring-processes-with-supervisord
     sudo apt-get install -y supervisor
     sudo service supervisor start
     create softlink to supervisorconfig:
-    sudo ln -s ~/sshgit/pyrobot/robopi/supervisor_videostream.conf /etc/supervisor/conf.d/
-    sudo ln -s ~/sshgit/pyrobot/robopi/supervisor_gpioclient.conf /etc/supervisor/conf.d/
-    sudo ln -s ~/sshgit/pyrobot/robopi/supervisor_batteryguard.conf /etc/supervisor/conf.d/
+    sudo ln -s ~/git/rig-monitoring/robopi/supervisor_videostream.conf /etc/supervisor/conf.d/
+    sudo ln -s ~/git/rig-monitoring/robopi/supervisor_gpioclient.conf /etc/supervisor/conf.d/
+    sudo ln -s ~/git/rig-monitoring/robopi/supervisor_batteryguard.conf /etc/supervisor/conf.d/
     sudo mkdir /var/log/pyrologs
     sudo supervisorctl reread ...should not need sudo
     sudo supervisorctl update

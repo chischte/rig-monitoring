@@ -7,7 +7,7 @@ import serial
 lipoGuard=serial.Serial("/dev/ttyUSB0",9600)  #change ACM number as found from ls /dev/tty/ACM*
 lipoGuard.baudrate=9600
 
-ws = websocket.create_connection("ws://machinelogger.synology.me:8083")
+ws = websocket.create_connection("ws://10.10.20.161:8083")
 
 def sendLipoInfo(capacity):
     sendPrefix = "LIPO"
