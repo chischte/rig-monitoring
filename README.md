@@ -161,12 +161,7 @@ https://pypi.org/project/websocket_client/
 
 
 
-*************HEEREEE*******************************************************
-*************HEEREEE*******************************************************
-*************HEEREEE*******************************************************
-*************HEEREEE*******************************************************
-*************HEEREEE*******************************************************
-*************HEEREEE*******************************************************
+
 
 
 
@@ -178,6 +173,7 @@ https://pypi.org/project/websocket_client/
     cd /var/www/websocket
     node gpio_socket.js
     ...works
+
 
 **Setup the streaming website on the serverpi**
 
@@ -192,24 +188,22 @@ Create softlinks for apache:
     sudo /etc/init.d/apache2 restart
 
 ---
+*************HEEREEE*******************************************************
 
-**Create aliases to start videosocket and videostream**  
+**Start processes manually**  
 These are optional because this processes will be managed by supervisord.
 
-@serverpi:
-
-    alias pyrostartwebsocket="
-        cd /var/www/websocket; node videosocket_relay.js supersecret 8081 8082"
+@serverpi:  
+cd /var/www/websocket; node videosocket_relay.js supersecret 8081 8082
 
 @robopi:
 
-    alias pyrostartvideostream="
         ffmpeg \
         -f video4linux2 \
     	    -framerate 30 -video_size 320x240 -i /dev/video0 \
         -f mpegts \
     	    -codec:v mpeg1video -s 320x240 -b:v 1000k -bf 0 \
-        http://machinelogger.synology.me:8081/supersecret"
+        http://machinelogger.synology.me:8081/supersecret
 
 Working settings:
 
